@@ -49,20 +49,47 @@ class LinkedList(object):
         Inserting at position 3 means between
         the 2nd and 3rd elements."""
 
-        elementByPosition = self.head
+        #Add new_element to link list
+        le = LinkedList(new_element)
 
+        numbers_of_iteration = range(1, position - 1)
+
+        if position == 1:
+            self.head = new_element
+        elif(position == 2):
+            self.head.next = new_element
+        else:
+            for i in numbers_of_iteration:
+                iterator_element = self.head.next
+
+
+
+        #TODO new element add to desire position
+        #Unknow how to add to position which I want
+        #What I have to do this? I have "next method"
+        #Condition? iterate in loop for wanted amount of time
+        #I have several condtion
+        #TODO If position == 1
+        #TODO if position > 1
+
+
+
+
+
+        # elementByPosition = self.head
         #
-        POSITION_ITERATE = position - 2
-
-        # 4rd element or greater
-        if POSITION_ITERATE > 1:
-            for i in range(POSITION_ITERATE):
-                elementByPosition = elementByPosition.next
-            self.head = elementByPosition
-            self.head.next = new_element
-        # 3rd element
-        elif(POSITION_ITERATE == 1):
-            self.head.next = new_element
+        # #
+        # POSITION_ITERATE = position - 2
+        #
+        # # 4rd element or greater
+        # if POSITION_ITERATE > 1:
+        #     for i in range(POSITION_ITERATE):
+        #         elementByPosition = elementByPosition.next
+        #     self.head = elementByPosition
+        #     self.head.next = new_element
+        # # 3rd element
+        # elif(POSITION_ITERATE == 1):
+        #     self.head.next = new_element
 
 
 
@@ -92,9 +119,11 @@ print(ll.head.next.next.value)
 print(ll.get_position(3).value)
 
 # Test insert
-ll.insert(e4, 3)
+ll.insert(e4, 1)
+
+#ll.insert(e4, 3)
 # Should print 4 now
-print(ll.get_position(3).value)
+print(ll.get_position(1).value)
 
 # Test delete
 #ll.delete(1)
